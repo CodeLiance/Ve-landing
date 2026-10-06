@@ -15,7 +15,7 @@ export function Particles({ scrollProgress, isDark }: ParticlesProps) {
   const isMobile = viewport.width < 6
 
   const count = isMobile ? 80 : 200
-  const baseColor = isDark ? "#3b82f6" : "#1d4ed8"
+  const baseColor = isDark ? "#e4e4e7" : "#27272a"
 
   const { positions, velocities } = useMemo(() => {
     const positions = new Float32Array(count * 3)

@@ -15,9 +15,10 @@ export function Effects({ scrollProgress, isDark }: EffectsProps) {
   const light3Ref = useRef<THREE.PointLight>(null!)
 
   // Light colors adapt to theme
-  const primaryLightColor = isDark ? "#2563eb" : "#3b82f6"
-  const secondaryLightColor = isDark ? "#1d4ed8" : "#60a5fa"
-  const accentLightColor = isDark ? "#06b6d4" : "#0ea5e9"
+  // Blanco, azul hielo y lavanda: dan el degradado sobre la esfera metálica.
+  const primaryLightColor = isDark ? "#ffffff" : "#e5e7eb"
+  const secondaryLightColor = isDark ? "#93c5fd" : "#bfdbfe"
+  const accentLightColor = isDark ? "#c4b5fd" : "#ddd6fe"
 
   useFrame((state) => {
     const time = state.clock.elapsedTime
@@ -70,7 +71,7 @@ export function Effects({ scrollProgress, isDark }: EffectsProps) {
         color={isDark ? "#334155" : "#e2e8f0"}
       />
 
-      {/* Orbiting blue point lights */}
+      {/* Orbiting point lights */}
       <pointLight
         ref={light1Ref}
         color={primaryLightColor}

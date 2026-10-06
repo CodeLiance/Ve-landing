@@ -55,11 +55,14 @@ export function CoreGeometry({ scrollProgress, isDark }: CoreGeometryProps) {
     return geo
   }, [nodeData])
 
-  // Colors for light and dark mode: Blue main, Yellow details
-  const emissiveColor = isDark ? "#3b82f6" : "#2563eb" // Blue glow (primary)
-  const wireColor = isDark ? "#fbbf24" : "#f59e0b" // Yellow wireframe (detail)
-  const nodeColor = isDark ? "#fbbf24" : "#f59e0b" // Yellow nodes (detail)
-  const lineColor = isDark ? "#fcd34d" : "#fbbf24" // Yellow lines (detail)
+  // Paleta monocroma (grafito y plata) para ir con el blanco y negro de la
+  // landing. El degradado lo ponen los reflejos de las luces de Effects
+  // (blanco → azul hielo → lavanda) sobre el material metálico.
+  const baseColor = isDark ? "#27272a" : "#d4d4d8" // Grafito / plata
+  const emissiveColor = isDark ? "#a1a1aa" : "#f4f4f5" // Brillo neutro tenue
+  const wireColor = isDark ? "#e4e4e7" : "#52525b" // Malla plateada
+  const nodeColor = isDark ? "#ffffff" : "#18181b" // Nodos blancos
+  const lineColor = isDark ? "#f4f4f5" : "#3f3f46" // Conexiones
 
   useFrame((state) => {
     const time = state.clock.elapsedTime
@@ -88,7 +91,7 @@ export function CoreGeometry({ scrollProgress, isDark }: CoreGeometryProps) {
       }
       mat.emissiveIntensity = THREE.MathUtils.lerp(
         mat.emissiveIntensity,
-        0.3 + scroll * 0.6,
+        0.12 + scroll * 0.3,
         0.02
       )
 
@@ -156,15 +159,15 @@ export function CoreGeometry({ scrollProgress, isDark }: CoreGeometryProps) {
       <mesh ref={mainRef}>
         <icosahedronGeometry args={[1.2, 8]} />
         <MeshDistortMaterial
-          color={isDark ? "#1e3a8a" : "#93c5fd"}
+          color={baseColor}
           emissive={emissiveColor}
-          emissiveIntensity={0.4}
+          emissiveIntensity={0.15}
           transparent
           opacity={0.8}
           wireframe={false}
           side={THREE.DoubleSide}
-          roughness={0.3}
-          metalness={0.7}
+          roughness={0.22}
+          metalness={0.9}
           distort={0.1}
           speed={2}
         />
@@ -192,7 +195,7 @@ export function CoreGeometry({ scrollProgress, isDark }: CoreGeometryProps) {
             <meshStandardMaterial
               color={nodeColor}
               emissive={nodeColor}
-              emissiveIntensity={0.8}
+              emissiveIntensity={0.6}
               transparent
               opacity={0.9}
             />
