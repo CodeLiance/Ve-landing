@@ -5,7 +5,7 @@ import { StoreButtons } from "./store-buttons"
 
 export function LandingHero() {
   return (
-    <section id="descargar" className="relative scroll-mt-24 overflow-hidden px-6 pt-16 pb-20 sm:pt-24 sm:pb-28">
+    <section className="relative overflow-hidden px-6 pt-16 pb-20 sm:pt-24 sm:pb-28">
       {/* Subtle radial gradient overlay for depth — works in both modes */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(59,130,246,0.08)_0%,_transparent_70%)]" />
 
