@@ -1,11 +1,11 @@
 "use client"
 
-import { UserPlus, ShieldCheck, Heart } from "lucide-react"
+import { ArrowDownToLine, ShieldCheck, Heart } from "lucide-react"
 import { Reveal } from "./reveal"
 
 const steps = [
-  { key: "create", icon: UserPlus, label: "Crea tu cuenta" },
-  { key: "verify", icon: ShieldCheck, label: "Verifica que perteneces a una universidad" },
+  { key: "download", icon: ArrowDownToLine, label: "Descarga la app en tu iPhone o Android" },
+  { key: "create", icon: ShieldCheck, label: "Crea tu cuenta con tu correo institucional" },
   { key: "start", icon: Heart, label: "Comienza a conectar con otros estudiantes" },
 ] as const
 

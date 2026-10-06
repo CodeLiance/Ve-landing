@@ -8,6 +8,7 @@ import { LandingHero } from "@/components/landing/landing-hero"
 import { LandingBenefits } from "@/components/landing/landing-benefits"
 import { LandingHowItWorks } from "@/components/landing/landing-how-it-works"
 import { LandingFaq } from "@/components/landing/landing-faq"
+import { LandingDownload } from "@/components/landing/landing-download"
 import { LandingFooter } from "@/components/landing/landing-footer"
 import { SceneErrorBoundary } from "@/components/three/SceneErrorBoundary"
 
@@ -37,6 +38,7 @@ export default function LandingPage() {
           <LandingBenefits />
           <LandingHowItWorks />
           <LandingFaq />
+          <LandingDownload />
         </main>
         <LandingFooter />
       </div>
