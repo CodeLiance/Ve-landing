@@ -55,7 +55,7 @@ function StoreButton({ platform }: { platform: StorePlatform }) {
       aria-label={`Descargar Ve! para ${label} en ${store}`}
       className={cn(
         base,
-        "bg-primary text-primary-foreground shadow-[0_8px_30px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(245,167,66,0.25)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring active:scale-[0.98]",
+        "bg-primary text-primary-foreground shadow-[0_8px_30px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(255,255,255,0.18)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring active:scale-[0.98]",
       )}
     >
       {content}

@@ -20,8 +20,9 @@ import {
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["700"] })
 
-// Colores reales de la app (ícono "Ve!" y botones de Explorar).
-const BRAND = "#F5A742"
+// Paleta monocroma (blanco sobre negro). Solo los botones de Explorar
+// conservan su rojo y verde, como en la app.
+const BRAND = "#FFFFFF"
 const NOPE = "#FF4458"
 const LIKE = "#4CD964"
 
@@ -36,7 +37,7 @@ const stories = [
 function Avatar({ initial, className = "" }: { initial: string; className?: string }) {
   return (
     <span
-      className={`flex items-center justify-center rounded-full bg-gradient-to-br from-[#F5A742] to-[#FF4458] font-bold text-white ${className}`}
+      className={`flex items-center justify-center rounded-full bg-gradient-to-br from-[#F5F5F0] to-[#8E8E93] font-bold text-[#0A0A0C] ${className}`}
     >
       {initial}
     </span>
@@ -84,7 +85,7 @@ function AppScreen() {
         {stories.map(({ name, initial, own }) => (
           <div key={name} className="flex w-11 flex-col items-center gap-1">
             <span
-              className={`rounded-full p-[2px] ${own ? "bg-white/15" : "bg-gradient-to-tr from-[#F5A742] via-[#FF4458] to-[#C13584]"}`}
+              className={`rounded-full p-[2px] ${own ? "bg-white/15" : "bg-gradient-to-tr from-white via-[#A8A398] to-white"}`}
             >
               <span className="block rounded-full bg-[#0A0A0C] p-[2px]">
                 {own ? (
@@ -157,9 +158,9 @@ export function PhoneMockup() {
       aria-label="Vista previa de la app Ve!: inicio con historias y publicaciones de estudiantes, un match y un mensaje nuevo"
       className="relative mx-auto w-full max-w-[290px] sm:max-w-[310px]"
     >
-      {/* Brillo ambiental con los colores de la marca */}
+      {/* Brillo ambiental */}
       <div aria-hidden className="pointer-events-none absolute -inset-10 -z-10">
-        <div className="absolute top-[12%] left-[8%] h-56 w-56 rounded-full bg-[#F5A742]/25 blur-[80px]" />
+        <div className="absolute top-[12%] left-[8%] h-56 w-56 rounded-full bg-white/10 blur-[80px]" />
         <div className="absolute right-[4%] bottom-[14%] h-56 w-56 rounded-full bg-[#3B82F6]/20 blur-[90px]" />
       </div>
 
@@ -223,7 +224,7 @@ export function PhoneMockup() {
         <span className="flex h-10 w-10 items-center justify-center rounded-full border-[1.5px] border-[#FF4458]/40 bg-[#FF4458]/15">
           <X size={20} color={NOPE} strokeWidth={2.8} />
         </span>
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#F5A742]/15">
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10">
           <RotateCcw size={15} color={BRAND} strokeWidth={2.2} />
         </span>
         <span className="flex h-11 w-11 items-center justify-center rounded-full border-[1.5px] border-[#4CD964]/40 bg-[#4CD964]/15">
